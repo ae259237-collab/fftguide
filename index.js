@@ -474,7 +474,7 @@ app.post("/application", async (req, res) => {
 // ЗАПУСК СЕРВЕРА
 // ================================
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`FitGuide запущен: http://localhost:${PORT}`);
