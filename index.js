@@ -11,11 +11,10 @@ const app = express();
 // ================================
 
 const pool = new pg.Pool({
-  user: "postgres",
-  host: "localhost",
-  password: process.env.DB_PASSWORD,
-  database: "fitguide",
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 // ================================
