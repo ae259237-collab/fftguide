@@ -1,0 +1,112 @@
+<section class="page-section admin-page">
+    <div class="container">
+
+        <h1>Панель администратора</h1>
+
+        <p>
+            Здесь отображаются все заявки пользователей.
+        </p>
+
+        <a href="/logout" class="btn btn-secondary">
+            Выйти
+        </a>
+
+        {{#if requests}}
+
+            <div class="requests-list">
+
+                {{#each requests}}
+
+                    <article class="admin-card">
+
+                        <div class="admin-card-header">
+
+                            <h2>
+                                Заявка №{{ID_Training_Request}}
+                            </h2>
+
+                            <span class="admin-status">
+                                {{StatusName}}
+                            </span>
+
+                        </div>
+
+                        <div class="admin-info">
+
+                            <p>
+                                <strong>Клиент</strong>
+                                {{LastName}} {{FirstName}}
+                            </p>
+
+                            <p>
+                                <strong>Дата</strong>
+                                {{Training_date}}
+                            </p>
+
+                            <p>
+                                <strong>Тренировка</strong>
+                                {{WorkoutName}}
+                            </p>
+
+                            <p>
+                                <strong>Оплата</strong>
+                                {{PaymentName}}
+                            </p>
+
+                        </div>
+
+                        <form
+                            action="/admin/status"
+                            method="POST"
+                            class="admin-form"
+                        >
+
+                            <input
+                                type="hidden"
+                                name="ID_Training_Request"
+                                value="{{ID_Training_Request}}"
+                            >
+
+                            <select
+                                name="ID_Status"
+                                required
+                            >
+
+                                {{#each statuses}}
+
+                                    <option
+                                        value="{{ID_Status}}"
+                                        {{#if IsCurrent}}selected{{/if}}
+                                    >
+                                        {{Name}}
+                                    </option>
+
+                                {{/each}}
+
+                            </select>
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+                                Сохранить
+                            </button>
+
+                        </form>
+
+                    </article>
+
+                {{/each}}
+
+            </div>
+
+        {{else}}
+
+            <p>
+                Заявок пока нет.
+            </p>
+
+        {{/if}}
+
+    </div>
+</section>

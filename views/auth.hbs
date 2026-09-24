@@ -1,0 +1,49 @@
+<section class="auth-page">
+
+  <div class="auth-card">
+
+    <p class="auth-logo">
+      FIT<span>GUIDE</span>
+    </p>
+
+    <h1>
+      Вход
+    </h1>
+
+    <p class="auth-subtitle">
+      Введите данные для входа в аккаунт
+    </p>
+
+    <form action="/login" method="POST">
+
+      <label for="login">
+        Логин
+      </label>
+
+      <input type="text" id="login" name="login" required />
+
+      <label for="password">
+        Пароль
+      </label>
+
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit" class="btn btn-primary auth-button">
+        Войти
+      </button>
+
+    </form>
+
+    <p class="auth-link">
+
+      Нет аккаунта?
+
+      <a href="/register">
+        Зарегистрироваться
+      </a>
+
+    </p>
+
+  </div>
+
+</section>

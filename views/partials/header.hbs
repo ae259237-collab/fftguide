@@ -1,0 +1,30 @@
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a href="/" class="logo" aria-label="FitGuide">
+      <span class="logo-fit">FIT</span>
+      <span class="logo-sun"></span>
+      <span class="logo-guide">GUIDE</span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="/" class="nav-active">Главная</a>
+      <a href="/workouts">Тренировки</a>
+      <a href="/#popular">О нас</a>
+      <a href="/#contacts">Контакты</a>
+
+      <span class="nav-search" aria-hidden="true"></span>
+
+      {{#if userId}}
+        {{#if isAdmin}}
+          <a href="/admin" class="nav-login">Заявки</a>
+        {{else}}
+          <a href="/cabinet" class="nav-login">Кабинет</a>
+        {{/if}}
+      {{else}}
+        <a href="/login" class="nav-login">Войти</a>
+      {{/if}}
+    </nav>
+
+  </div>
+</header>

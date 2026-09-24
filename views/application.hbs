@@ -1,0 +1,73 @@
+<section class="booking-page">
+
+  <div class="booking-card">
+
+    <h1>
+      Запись на тренировку
+    </h1>
+
+    <p class="booking-description">
+      Выберите программу, удобную дату и способ оплаты.
+    </p>
+
+    <form action="/application" method="POST">
+
+      <div class="booking-field">
+
+        <label for="workout">
+          Тренировочная программа
+        </label>
+
+        <select id="workout" name="ID_Workout" required>
+          <option value="" disabled selected>
+            Выберите программу
+          </option>
+
+          {{#each workouts}}
+            <option value="{{ID_Workout}}">
+              {{Name}}
+            </option>
+          {{/each}}
+        </select>
+
+      </div>
+
+      <div class="booking-field">
+
+        <label for="date">
+          Дата тренировки
+        </label>
+
+        <input type="date" id="date" name="Training_date" required />
+
+      </div>
+
+      <div class="booking-field">
+
+        <label for="payment">
+          Способ оплаты
+        </label>
+
+        <select id="payment" name="ID_Payment_method" required>
+          <option value="" disabled selected>
+            Выберите способ оплаты
+          </option>
+
+          {{#each paymentMethods}}
+            <option value="{{ID_Payment_method}}">
+              {{Name}}
+            </option>
+          {{/each}}
+        </select>
+
+      </div>
+
+      <button type="submit" class="booking-button">
+        Отправить заявку
+      </button>
+
+    </form>
+
+  </div>
+
+</section>

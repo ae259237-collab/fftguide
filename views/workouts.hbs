@@ -1,0 +1,318 @@
+<section class="page-section workouts-page">
+  <img
+    src="/assets/listya.png"
+    alt=""
+    class="workouts-leaf workouts-leaf-right"
+    aria-hidden="true"
+  />
+
+  <div class="container">
+    <div class="workouts-heading">
+      <h1>Тренировки</h1>
+      <p class="workouts-subtitle">Выбери программу под свою цель и формат
+        занятий.</p>
+    </div>
+
+    <div class="workouts-categories" aria-label="Категории">
+      <button
+        type="button"
+        class="workouts-category is-active"
+        data-category="all"
+      >Все</button>
+      <button
+        type="button"
+        class="workouts-category"
+        data-category="strength"
+      >Сила</button>
+      <button
+        type="button"
+        class="workouts-category"
+        data-category="flexibility"
+      >Гибкость</button>
+      <button
+        type="button"
+        class="workouts-category"
+        data-category="cardio"
+      >Кардио</button>
+      <button
+        type="button"
+        class="workouts-category"
+        data-category="pilates"
+      >Пилатес</button>
+      <button
+        type="button"
+        class="workouts-category"
+        data-category="nutrition"
+      >Питание</button>
+    </div>
+
+    <div class="workouts-layout">
+      <aside class="workouts-filters" aria-label="Фильтры тренировок">
+        <div class="workouts-filters-title">
+          <span>Фильтры</span>
+          <button
+            type="button"
+            class="workouts-reset"
+            id="workoutsReset"
+          >Сбросить</button>
+        </div>
+
+        <div class="workouts-filter" data-filter="goal">
+          <span>Цель</span>
+          <label class="workouts-filter-option"><input
+              type="checkbox"
+              value="loss"
+            /><span>Похудение</span></label>
+          <label class="workouts-filter-option"><input
+              type="checkbox"
+              value="gain"
+            /><span>Набор мышечной массы</span></label>
+          <label class="workouts-filter-option"><input
+              type="checkbox"
+              value="endurance"
+            /><span>Выносливость</span></label>
+          <label class="workouts-filter-option"><input
+              type="checkbox"
+              value="mobility"
+            /><span>Гибкость и мобильность</span></label>
+          <label class="workouts-filter-option"><input
+              type="checkbox"
+              value="back"
+            /><span>Здоровье спины</span></label>
+        </div>
+
+        <div class="workouts-filter" data-filter="level">
+          <span>Уровень подготовки</span>
+          <label class="workouts-filter-option"><input
+              type="checkbox"
+              value="beginner"
+            /><span>Начальный</span></label>
+          <label class="workouts-filter-option"><input
+              type="checkbox"
+              value="medium"
+            /><span>Средний</span></label>
+          <label class="workouts-filter-option"><input
+              type="checkbox"
+              value="advanced"
+            /><span>Продвинутый</span></label>
+        </div>
+
+        <div class="workouts-filter" data-filter="duration">
+          <span>Длительность</span>
+          <label class="workouts-filter-option"><input
+              type="checkbox"
+              value="short"
+            /><span>До 20 мин</span></label>
+          <label class="workouts-filter-option"><input
+              type="checkbox"
+              value="medium"
+            /><span>20–40 мин</span></label>
+          <label class="workouts-filter-option"><input
+              type="checkbox"
+              value="long"
+            /><span>40–60 мин</span></label>
+        </div>
+
+        <div class="workouts-filter" data-filter="format">
+          <span>Формат</span>
+          <label class="workouts-filter-option"><input
+              type="checkbox"
+              value="home"
+            /><span>Дома</span></label>
+          <label class="workouts-filter-option"><input
+              type="checkbox"
+              value="gym"
+            /><span>В зале</span></label>
+        </div>
+
+      </aside>
+
+      <main class="workouts-content">
+        <div class="workouts-grid" id="workoutsGrid">
+
+          <article
+            class="workout-card"
+            data-category="strength cardio"
+            data-goal="loss endurance"
+            data-level="beginner"
+            data-duration="medium"
+            data-format="home gym"
+          >
+            <div class="workout-card-media">
+              <img src="/assets/k.png" alt="Стройное и сильное тело" />
+              <span class="workout-card-number">01</span>
+            </div>
+            <div class="workout-card-body">
+              <p class="workout-card-kicker">BODY / STRENGTH</p>
+              <h2>Стройное и сильное тело</h2>
+              <p>Базовая программа для работы над силой и общей формой.</p>
+              <div class="workout-card-meta">
+                <span>◷ 20–40 мин</span>
+                <span>● Начальный</span>
+              </div>
+              <a href="/application?workout=1" class="workout-details">Подробнее
+                <span>→</span></a>
+            </div>
+          </article>
+          <article
+            class="workout-card"
+            data-category="strength"
+            data-goal="gain endurance"
+            data-level="medium"
+            data-duration="medium"
+            data-format="home gym"
+          >
+            <div class="workout-card-media">
+              <img src="/assets/k1.png" alt="Сила и выносливость" />
+              <span class="workout-card-number">02</span>
+            </div>
+            <div class="workout-card-body">
+              <p class="workout-card-kicker">STRENGTH / ENDURANCE</p>
+              <h2>Сила и выносливость</h2>
+              <p>Тренировки с акцентом на силовую работу и выносливость.</p>
+              <div class="workout-card-meta">
+                <span>◷ 20–40 мин</span>
+                <span>● Средний</span>
+              </div>
+              <a href="/application?workout=2" class="workout-details">Подробнее
+                <span>→</span></a>
+            </div>
+          </article>
+          <article
+            class="workout-card"
+            data-category="flexibility pilates"
+            data-goal="mobility"
+            data-level="beginner"
+            data-duration="short"
+            data-format="home"
+          >
+            <div class="workout-card-media">
+              <img src="/assets/k2.png" alt="Гибкость и мобильность" />
+              <span class="workout-card-number">03</span>
+            </div>
+            <div class="workout-card-body">
+              <p class="workout-card-kicker">FLEX / MOBILITY</p>
+              <h2>Гибкость и мобильность</h2>
+              <p>Спокойная работа на подвижность, гибкость и контроль движений.</p>
+              <div class="workout-card-meta">
+                <span>◷ До 20 мин</span>
+                <span>● Начальный</span>
+              </div>
+              <a href="/application?workout=3" class="workout-details">Подробнее
+                <span>→</span></a>
+            </div>
+          </article>
+          <article
+            class="workout-card"
+            data-category="strength pilates"
+            data-goal="back"
+            data-level="beginner"
+            data-duration="short"
+            data-format="home"
+          >
+            <div class="workout-card-media">
+              <img src="/assets/k3.png" alt="Пресс и кор" />
+              <span class="workout-card-number">04</span>
+            </div>
+            <div class="workout-card-body">
+              <p class="workout-card-kicker">CORE / PRESS</p>
+              <h2>Пресс и кор</h2>
+              <p>Комплекс для мышц корпуса, стабильности и контроля тела.</p>
+              <div class="workout-card-meta">
+                <span>◷ До 20 мин</span>
+                <span>● Начальный</span>
+              </div>
+              <a href="/application?workout=4" class="workout-details">Подробнее
+                <span>→</span></a>
+            </div>
+          </article>
+          <article
+            class="workout-card"
+            data-category="nutrition"
+            data-goal="gain"
+            data-level="beginner"
+            data-duration="short"
+            data-format="home"
+          >
+            <div class="workout-card-media">
+              <img src="/assets/k4.png" alt="Питание и привычки" />
+              <span class="workout-card-number">05</span>
+            </div>
+            <div class="workout-card-body">
+              <p class="workout-card-kicker">NUTRITION / HABITS</p>
+              <h2>Питание и привычки</h2>
+              <p>Поддержка полезных привычек и удобного режима питания.</p>
+              <div class="workout-card-meta">
+                <span>◷ До 20 мин</span>
+                <span>● Начальный</span>
+              </div>
+              <a href="/workouts#nutrition" class="workout-details">Подробнее
+                <span>→</span></a>
+            </div>
+          </article>
+          <article
+            class="workout-card"
+            data-category="strength cardio"
+            data-goal="loss endurance"
+            data-level="medium"
+            data-duration="medium"
+            data-format="home gym"
+          >
+            <div class="workout-card-media">
+              <img src="/assets/k5.png" alt="Функциональный тренинг" />
+              <span class="workout-card-number">06</span>
+            </div>
+            <div class="workout-card-body">
+              <p class="workout-card-kicker">FUNCTIONAL / FULL BODY</p>
+              <h2>Функциональный тренинг</h2>
+              <p>Динамичная работа на координацию, силу и движение всего тела.</p>
+              <div class="workout-card-meta">
+                <span>◷ 20–40 мин</span>
+                <span>● Средний</span>
+              </div>
+              <a href="/application?workout=5" class="workout-details">Подробнее
+                <span>→</span></a>
+            </div>
+          </article>
+        </div>
+        <div class="workouts-empty" id="workoutsEmpty" hidden>По выбранным
+          фильтрам ничего не найдено.</div>
+      </main>
+    </div>
+  </div>
+</section>
+
+<script>
+  (() => { const page = document.querySelector('.workouts-page'); if (!page)
+  return; const cards = Array.from(page.querySelectorAll('.workout-card'));
+  const categoryButtons =
+  Array.from(page.querySelectorAll('.workouts-category')); const filterGroups =
+  Array.from(page.querySelectorAll('.workouts-filter')); const resetButton =
+  page.querySelector('#workoutsReset'); const empty =
+  page.querySelector('#workoutsEmpty');
+  page.closest('body')?.querySelectorAll('.main-nav a').forEach((link) => {
+  link.classList.toggle('nav-current', link.textContent.trim() ===
+  'Тренировки'); }); let activeCategory = 'all'; const applyFilters = () => {
+  let visible = 0; cards.forEach((card) => { const categories =
+  (card.dataset.category || '').split(' ').filter(Boolean); if (activeCategory
+  !== 'all' && !categories.includes(activeCategory)) { card.hidden = true;
+  return; } let matches = true; for (const group of filterGroups) { const key =
+  group.dataset.filter; const selected =
+  Array.from(group.querySelectorAll('input:checked')).map((input) =>
+  input.value); if (!selected.length) continue; const cardValues =
+  (card.dataset[key] || '').split(' ').filter(Boolean); if
+  (!selected.some((value) => cardValues.includes(value))) { matches = false;
+  break; } } card.hidden = !matches; if (matches) visible += 1; }); empty.hidden
+  = visible !== 0; }; categoryButtons.forEach((button) => {
+  button.addEventListener('click', () => { categoryButtons.forEach((item) =>
+  item.classList.remove('is-active')); button.classList.add('is-active');
+  activeCategory = button.dataset.category || 'all'; applyFilters(); }); });
+  page.querySelectorAll('.workouts-filter-option input').forEach((input) => {
+  input.addEventListener('change', applyFilters); });
+  resetButton.addEventListener('click', () => {
+  page.querySelectorAll('.workouts-filter-option input').forEach((input) =>
+  input.checked = false); categoryButtons.forEach((item) =>
+  item.classList.remove('is-active'));
+  page.querySelector('.workouts-category[data-category="all"]')?.classList.add('is-active');
+  activeCategory = 'all'; applyFilters(); }); applyFilters(); })();
+</script>

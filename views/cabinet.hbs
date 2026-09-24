@@ -1,0 +1,2593 @@
+<style>
+  /* =========================================================
+     FITGUIDE — PERSONAL CABINET
+  ========================================================= */
+
+  .cabinet-page {
+    min-height: 100vh;
+    padding: 28px 0 60px;
+
+    color: #29272A;
+
+    background:
+      radial-gradient(circle at 85% 10%, rgba(255, 189, 228, 0.28), transparent 25%),
+      radial-gradient(circle at 5% 85%, rgba(242, 154, 114, 0.12), transparent 28%),
+      #F9F4F0;
+  }
+
+  .cabinet-layout {
+    width: calc(100% - 120px);
+    max-width: 1380px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+
+    gap: 28px;
+  }
+
+  /* =========================================================
+     SIDEBAR
+  ========================================================= */
+
+  .cabinet-sidebar {
+    min-height: 690px;
+
+    padding: 18px;
+
+    border-radius: 26px;
+
+    background: #FFFFFF;
+
+    box-shadow:
+      0 12px 35px rgba(41, 39, 42, 0.07);
+  }
+
+  .cabinet-profile {
+    padding: 22px 18px;
+
+    border-radius: 18px;
+
+    background: #FC0F85;
+
+    color: #FFFFFF;
+  }
+
+  .cabinet-profile-name {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+
+  .cabinet-profile-role {
+    margin-top: 7px;
+
+    font-size: 12px;
+
+    opacity: 0.9;
+  }
+
+  .cabinet-menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    margin-top: 22px;
+  }
+
+  .cabinet-menu a {
+    display: block;
+
+    padding: 11px 14px;
+
+    border-radius: 12px;
+
+    color: #616161;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .cabinet-menu a:hover {
+    color: #29272A;
+
+    background: rgba(252, 15, 133, 0.07);
+
+    transform: translateX(2px);
+  }
+
+  .cabinet-menu a.active {
+    color: #29272A;
+
+    background: #F4C3C2;
+
+    font-weight: 800;
+  }
+
+
+  /* =========================================================
+     GOAL CARD
+  ========================================================= */
+
+  .cabinet-goal {
+    margin-top: 44px;
+  }
+
+  .cabinet-goal-label {
+    margin: 0 0 5px;
+
+    color: #616161;
+
+    font-size: 13px;
+  }
+
+  .cabinet-goal-title {
+    margin: 0 0 12px;
+
+    color: #29272A;
+
+    font-size: 14px;
+    line-height: 1.25;
+    font-weight: 800;
+  }
+
+  .cabinet-goal-card {
+    position: relative;
+
+    min-height: 210px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background:
+      linear-gradient(
+        140deg,
+        #FFBDE4 0%,
+        #F4C3C2 58%,
+        #F29A72 100%
+      );
+  }
+
+  .cabinet-goal-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    left: -45px;
+    bottom: -75px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.24);
+  }
+
+  .cabinet-goal-text {
+    position: relative;
+
+    z-index: 3;
+
+    padding: 34px 15px 0;
+
+    color: #29272A;
+
+    font-size: 13px;
+    line-height: 1.22;
+    font-weight: 800;
+  }
+
+  .cabinet-goal-card img {
+    position: absolute;
+
+    right: -10px;
+    bottom: -7px;
+
+    z-index: 2;
+
+    width: 112px;
+
+    opacity: 0.95;
+  }
+
+  .cabinet-goal-button {
+    position: absolute;
+
+    left: 13px;
+    bottom: 13px;
+
+    z-index: 5;
+
+    display: inline-flex;
+
+    padding: 8px 12px;
+
+    border-radius: 999px;
+
+    color: #FFFFFF;
+    background: #FC0F85;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-decoration: none;
+  }
+
+
+  /* =========================================================
+     MAIN
+  ========================================================= */
+
+  .cabinet-main {
+    min-width: 0;
+  }
+
+  .cabinet-heading {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 22px;
+
+    margin-bottom: 18px;
+  }
+
+  .cabinet-heading h1 {
+    margin: 0;
+
+    color: #29272A;
+
+    font-size: 36px;
+    line-height: 1.05;
+    font-weight: 800;
+  }
+
+  .cabinet-heading p {
+    margin: 7px 0 0;
+
+    color: #616161;
+
+    font-size: 15px;
+  }
+
+  .cabinet-eyebrow {
+    margin: 0 0 7px;
+
+    color: #FC0F85;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+  }
+
+
+  /* =========================================================
+     WEEK PROGRESS
+  ========================================================= */
+
+  .cabinet-week {
+    width: 340px;
+
+    padding: 17px 18px;
+
+    border-radius: 18px;
+
+    background: #FFFFFF;
+
+    box-shadow:
+      0 10px 28px rgba(41, 39, 42, 0.05);
+  }
+
+  .cabinet-week-label {
+    display: block;
+
+    color: #616161;
+
+    font-size: 12px;
+  }
+
+  .cabinet-week-count {
+    display: block;
+
+    margin: 4px 0 10px;
+
+    color: #29272A;
+
+    font-size: 18px;
+
+    font-weight: 800;
+  }
+
+  .cabinet-week-bar {
+    height: 7px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: #E1DEDC;
+  }
+
+  .cabinet-week-fill {
+    width: 0;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: #FC0F85;
+
+    transition: width 0.4s ease;
+  }
+
+  .cabinet-week-bottom {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 5px;
+
+    color: #FC0F85;
+
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+
+  /* =========================================================
+     STATISTICS
+  ========================================================= */
+
+  .cabinet-stats {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+
+    margin-bottom: 16px;
+  }
+
+  .cabinet-stat {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 17px 18px;
+
+    border-radius: 18px;
+
+    background: #FFFFFF;
+  }
+
+  .cabinet-stat::after {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    right: -35px;
+    top: -35px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 189, 228, 0.36);
+  }
+
+  .cabinet-stat span {
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    color: #616161;
+
+    font-size: 12px;
+  }
+
+  .cabinet-stat strong {
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #29272A;
+
+    font-size: 28px;
+
+    line-height: 1;
+  }
+
+
+  /* =========================================================
+     COMMON CARDS
+  ========================================================= */
+
+  .cabinet-card {
+    min-width: 0;
+
+    padding: 20px;
+
+    border-radius: 22px;
+
+    background: #FFFFFF;
+
+    box-shadow:
+      0 10px 28px rgba(41, 39, 42, 0.045);
+  }
+
+  .cabinet-card h2 {
+    margin: 0;
+
+    color: #29272A;
+
+    font-size: 20px;
+    line-height: 1.15;
+    font-weight: 800;
+  }
+
+
+  /* =========================================================
+     TOP GRID
+  ========================================================= */
+
+  .cabinet-top-grid {
+    display: grid;
+
+    grid-template-columns: 1.15fr 1.1fr 0.78fr;
+
+    gap: 16px;
+
+    margin-bottom: 16px;
+  }
+
+
+  /* =========================================================
+     CURRENT PROGRAM
+  ========================================================= */
+
+  .program-body {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-top: 15px;
+  }
+
+  .program-image {
+    width: 105px;
+    height: 150px;
+
+    flex: 0 0 105px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+  }
+
+  .program-info h3 {
+    margin: 0 0 7px;
+
+    color: #29272A;
+
+    font-size: 16px;
+    line-height: 1.14;
+    font-weight: 800;
+  }
+
+  .program-info p {
+    margin: 3px 0;
+
+    color: #616161;
+
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  .program-button {
+    display: inline-flex;
+
+    margin-top: 12px;
+
+    padding: 9px 13px;
+
+    border-radius: 999px;
+
+    color: #FFFFFF;
+    background: #FC0F85;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-decoration: none;
+  }
+
+
+  /* =========================================================
+     CHART
+  ========================================================= */
+
+  .chart-header {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .chart-header p {
+    margin: 4px 0 0;
+
+    color: #616161;
+
+    font-size: 11px;
+  }
+
+  .chart-total {
+    color: #FC0F85;
+
+    font-size: 26px;
+    font-weight: 800;
+  }
+
+  .activity-chart {
+    width: 100%;
+    height: 175px;
+
+    display: block;
+
+    margin-top: 7px;
+  }
+
+
+  /* =========================================================
+     CALORIES
+  ========================================================= */
+
+  .calories-card {
+    text-align: center;
+  }
+
+  .calories-card h2 {
+    text-align: left;
+  }
+
+  .calorie-wrap {
+    display: flex;
+
+    justify-content: center;
+
+    margin: 11px 0 7px;
+  }
+
+  .calorie-ring {
+    --calorie-percent: 83.6%;
+
+    width: 150px;
+    height: 150px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+      conic-gradient(
+        #FC0F85 var(--calorie-percent),
+        #D7D4D2 var(--calorie-percent)
+      );
+  }
+
+  .calorie-inner {
+    width: 112px;
+    height: 112px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #FFFFFF;
+  }
+
+  .calorie-inner strong {
+    color: #29272A;
+
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .calorie-inner span {
+    margin-top: 5px;
+
+    color: #616161;
+
+    font-size: 10px;
+  }
+
+  .calorie-inner small {
+    margin-top: 3px;
+
+    color: #616161;
+
+    font-size: 9px;
+  }
+
+  .calorie-controls {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 7px;
+  }
+
+  .calorie-controls button {
+    padding: 5px 10px;
+
+    border: 1px solid #E3DFDD;
+
+    border-radius: 999px;
+
+    color: #29272A;
+    background: #FFFFFF;
+
+    font-size: 10px;
+
+    cursor: pointer;
+  }
+
+  .calorie-controls button:hover {
+    border-color: #FC0F85;
+
+    color: #FC0F85;
+  }
+
+
+  /* =========================================================
+     BOTTOM GRID
+  ========================================================= */
+
+  .cabinet-bottom-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1.28fr 0.48fr;
+
+    gap: 16px;
+  }
+
+
+  /* =========================================================
+     CALENDAR
+  ========================================================= */
+
+  .calendar-title {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+  }
+
+  .calendar-title button {
+    width: 30px;
+    height: 30px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    color: #29272A;
+    background: #F7F3F0;
+
+    font-size: 20px;
+
+    cursor: pointer;
+  }
+
+  .calendar-title button:hover {
+    color: #FC0F85;
+  }
+
+  .calendar-month {
+    color: #29272A;
+
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  .calendar-weekdays,
+  .calendar-grid {
+    display: grid;
+
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+
+    gap: 5px;
+
+    margin-top: 12px;
+  }
+
+  .calendar-weekdays span {
+    color: #616161;
+
+    font-size: 9px;
+
+    text-align: center;
+  }
+
+  .calendar-day {
+    min-height: 31px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    color: #29272A;
+    background: #F8F5F3;
+
+    font-size: 10px;
+
+    cursor: pointer;
+  }
+
+  .calendar-day:hover {
+    background: #FFEAF5;
+  }
+
+  .calendar-day.today {
+    box-shadow: inset 0 0 0 2px #FFBDE4;
+  }
+
+  .calendar-day.training {
+    color: #FFFFFF;
+
+    background: #FC0F85;
+
+    font-weight: 800;
+  }
+
+  .calendar-day.empty {
+    background: transparent;
+
+    cursor: default;
+  }
+
+
+  /* =========================================================
+     REQUESTS
+  ========================================================= */
+
+  .request-card-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+  }
+
+  .request-card-link {
+    color: #FC0F85;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+  }
+
+  .request-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-top: 12px;
+  }
+
+  .cabinet-request {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 10px 12px;
+
+    border-radius: 13px;
+
+    background: #FAF8F6;
+  }
+
+  .request-main {
+    min-width: 0;
+  }
+
+  .request-main strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: #29272A;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+  }
+
+  .request-main span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #616161;
+
+    font-size: 10px;
+  }
+
+  .request-meta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+  }
+
+  .request-payment {
+    color: #616161;
+
+    font-size: 9px;
+  }
+
+  .request-status {
+    display: inline-flex;
+
+    padding: 5px 9px;
+
+    border-radius: 999px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+  }
+
+  .status-new {
+    color: #FC0F85;
+    background: #FFE0EF;
+  }
+
+  .status-progress {
+    color: #A96500;
+    background: #FFE3B7;
+  }
+
+  .status-done {
+    color: #2E8B57;
+    background: #DDF2E4;
+  }
+
+  .status-cancel {
+    color: #A83D3D;
+    background: #F6DDDD;
+  }
+
+  .cabinet-empty {
+    padding: 20px 0;
+
+    color: #616161;
+
+    font-size: 12px;
+  }
+
+
+  /* =========================================================
+     PROMO
+  ========================================================= */
+
+  .cabinet-promo {
+    position: relative;
+
+    min-height: 230px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background:
+      linear-gradient(
+        145deg,
+        #FFBDE4 0%,
+        #F4C3C2 58%,
+        #F7C8B2 100%
+      );
+  }
+
+  .cabinet-promo-leaf {
+    position: absolute;
+
+    top: 0;
+    right: -32px;
+
+    width: 125px;
+
+    opacity: 0.38;
+  }
+
+  .cabinet-promo-text {
+    position: relative;
+
+    z-index: 4;
+
+    padding: 38px 18px 0;
+
+    color: #FC0F85;
+
+    font-size: 20px;
+    line-height: 1.04;
+
+    font-weight: 800;
+  }
+
+  .cabinet-promo-sun {
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    right: -14px;
+    bottom: -45px;
+
+    border-radius: 50%;
+
+    background:
+      repeating-linear-gradient(
+        to bottom,
+        #F29A72 0,
+        #F29A72 7px,
+        transparent 7px,
+        transparent 14px
+      );
+  }
+
+  .cabinet-promo-palm {
+    position: absolute;
+
+    right: 1px;
+    bottom: -7px;
+
+    width: 130px;
+
+    z-index: 5;
+  }
+
+
+  /* =========================================================
+     FINAL BUTTONS
+  ========================================================= */
+
+  .cabinet-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 17px;
+  }
+
+  .cabinet-primary-button,
+  .cabinet-secondary-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 0 18px;
+
+    border-radius: 18px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    text-decoration: none;
+  }
+
+  .cabinet-primary-button {
+    color: #FFFFFF;
+
+    background: #FC0F85;
+  }
+
+  .cabinet-secondary-button {
+    color: #29272A;
+
+    background: #FFFFFF;
+  }
+
+
+  /* =========================================================
+     RESPONSIVE
+  ========================================================= */
+
+  @media (max-width: 1200px) {
+
+    .cabinet-layout {
+      width: calc(100% - 40px);
+
+      grid-template-columns: 205px minmax(0, 1fr);
+    }
+
+    .cabinet-top-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .calories-card {
+      grid-column: span 2;
+    }
+
+    .cabinet-bottom-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .cabinet-promo {
+      min-height: 190px;
+    }
+  }
+
+  @media (max-width: 850px) {
+
+    .cabinet-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .cabinet-sidebar {
+      min-height: auto;
+    }
+
+    .cabinet-menu {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cabinet-goal {
+      display: none;
+    }
+
+    .cabinet-heading {
+      flex-direction: column;
+    }
+
+    .cabinet-week {
+      width: 100%;
+    }
+
+    .cabinet-top-grid,
+    .cabinet-bottom-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .calories-card {
+      grid-column: auto;
+    }
+  }
+
+  @media (max-width: 560px) {
+
+    .cabinet-page {
+      padding-top: 18px;
+    }
+
+    .cabinet-layout {
+      width: calc(100% - 24px);
+    }
+
+    .cabinet-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .cabinet-menu {
+      grid-template-columns: 1fr;
+    }
+
+    .cabinet-heading h1 {
+      font-size: 30px;
+    }
+
+    .program-body {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .program-image {
+      width: 100%;
+      height: 190px;
+
+      flex-basis: auto;
+    }
+
+    .cabinet-request {
+      align-items: flex-start;
+
+      flex-direction: column;
+    }
+
+    .request-meta {
+      width: 100%;
+
+      justify-content: space-between;
+    }
+
+    .cabinet-actions {
+      flex-direction: column;
+
+      align-items: stretch;
+    }
+
+    .cabinet-primary-button,
+    .cabinet-secondary-button {
+      width: 100%;
+    }
+  }
+</style>
+
+
+<section class="cabinet-page">
+
+  <div class="cabinet-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="cabinet-sidebar">
+
+      <div class="cabinet-profile">
+
+        <div class="cabinet-profile-name">
+          Клиент FitGuide
+        </div>
+
+        <div class="cabinet-profile-role">
+          Личный кабинет
+        </div>
+
+      </div>
+
+
+      <nav class="cabinet-menu">
+
+        <a href="/cabinet" class="active">
+          Главная
+        </a>
+
+        <a href="/workouts">
+          Мои тренировки
+        </a>
+
+        <a href="#progress">
+          Прогресс
+        </a>
+
+        <a href="#requests">
+          Заявки
+        </a>
+
+        <a href="#calories">
+          Питание
+        </a>
+
+        <a href="#settings">
+          Настройки
+        </a>
+
+      </nav>
+
+
+      <div class="cabinet-goal">
+
+        <p class="cabinet-goal-label">
+          Моя цель
+        </p>
+
+        <p class="cabinet-goal-title">
+          Стать сильнее и выносливее
+        </p>
+
+        <div class="cabinet-goal-card">
+
+          <div class="cabinet-goal-text">
+            Большие цели<br />
+            начинаются с<br />
+            малых шагов
+          </div>
+
+          <img
+            src="/assets/palma.png"
+            alt=""
+          />
+
+          <a
+            href="/workouts"
+            class="cabinet-goal-button"
+          >
+            Выбрать программу
+          </a>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="cabinet-main">
+
+
+      <!-- HEADER -->
+
+      <section class="cabinet-heading">
+
+        <div>
+
+         
+          <h1>
+            Привет!
+          </h1>
+
+          <p>
+            Продолжай в том же духе! 💪
+          </p>
+
+        </div>
+
+
+        <div class="cabinet-week">
+
+          <span class="cabinet-week-label">
+            На этой неделе
+          </span>
+
+          <strong
+            class="cabinet-week-count"
+            id="weekCount"
+          >
+            0 / 5 тренировок
+          </strong>
+
+          <div class="cabinet-week-bar">
+
+            <div
+              class="cabinet-week-fill"
+              id="weekFill"
+            ></div>
+
+          </div>
+
+          <div class="cabinet-week-bottom">
+            <span id="weekPercent">0%</span>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- STATISTICS -->
+
+      <section class="cabinet-stats">
+
+        <article class="cabinet-stat">
+          <span>Всего заявок</span>
+          <strong id="statTotal">0</strong>
+        </article>
+
+        <article class="cabinet-stat">
+          <span>Активных заявок</span>
+          <strong id="statActive">0</strong>
+        </article>
+
+        <article class="cabinet-stat">
+          <span>Выполнено</span>
+          <strong id="statDone">0</strong>
+        </article>
+
+      </section>
+
+
+      <!-- TOP GRID -->
+
+      <section class="cabinet-top-grid">
+
+
+        <!-- PROGRAM -->
+
+        <article class="cabinet-card">
+
+          <h2>
+            Текущая программа
+          </h2>
+
+          <div class="program-body">
+
+            <img
+              src="/assets/f3.png"
+              alt="Тренировочная программа"
+              class="program-image"
+            />
+
+            <div class="program-info">
+
+              {{#if requests}}
+
+                {{#each requests}}
+
+                  {{#if @first}}
+
+                    <h3>
+                      {{WorkoutName}}
+                    </h3>
+
+                  {{/if}}
+
+                {{/each}}
+
+              {{else}}
+
+                <h3>
+                  Стройное и сильное тело
+                </h3>
+
+              {{/if}}
+
+              <p>
+                Уровень: Средний
+              </p>
+
+              <p>
+                Длительность: 4 недели
+              </p>
+
+              <a
+                href="/workouts"
+                class="program-button"
+              >
+                Посмотреть программу
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- CHART -->
+
+        <article
+          class="cabinet-card"
+          id="progress"
+        >
+
+          <div class="chart-header">
+
+            <div>
+
+              <h2>
+                График активности
+              </h2>
+
+              <p>
+                Количество заявок по месяцам
+              </p>
+
+            </div>
+
+            <strong
+              class="chart-total"
+              id="chartTotal"
+            >
+              0
+            </strong>
+
+          </div>
+
+          <canvas
+            id="activityChart"
+            class="activity-chart"
+          ></canvas>
+
+        </article>
+
+
+        <!-- CALORIES -->
+
+        <article
+          class="cabinet-card calories-card"
+          id="calories"
+        >
+
+          <h2>
+            Калории
+          </h2>
+
+          <div class="calorie-wrap">
+
+            <div
+              class="calorie-ring"
+              id="calorieRing"
+            >
+
+              <div class="calorie-inner">
+
+                <strong id="calorieValue">
+                  1840
+                </strong>
+
+                <span>
+                  ккал
+                </span>
+
+                <small>
+                  из 2200
+                </small>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="calorie-controls">
+
+            <button
+              type="button"
+              id="calorieMinus"
+            >
+              −100
+            </button>
+
+            <button
+              type="button"
+              id="caloriePlus"
+            >
+              +100
+            </button>
+
+          </div>
+
+        </article>
+
+      </section>
+
+
+      <!-- BOTTOM GRID -->
+
+      <section class="cabinet-bottom-grid">
+
+
+        <!-- CALENDAR -->
+
+        <article class="cabinet-card">
+
+          <div class="calendar-title">
+
+            <button
+              type="button"
+              id="calendarPrev"
+            >
+              ‹
+            </button>
+
+            <span
+              class="calendar-month"
+              id="calendarMonth"
+            >
+              Календарь
+            </span>
+
+            <button
+              type="button"
+              id="calendarNext"
+            >
+              ›
+            </button>
+
+          </div>
+
+
+          <div class="calendar-weekdays">
+
+            <span>Пн</span>
+            <span>Вт</span>
+            <span>Ср</span>
+            <span>Чт</span>
+            <span>Пт</span>
+            <span>Сб</span>
+            <span>Вс</span>
+
+          </div>
+
+
+          <div
+            class="calendar-grid"
+            id="calendarGrid"
+          ></div>
+
+        </article>
+
+
+        <!-- REQUESTS -->
+
+        <article
+          class="cabinet-card"
+          id="requests"
+        >
+
+          <div class="request-card-header">
+
+            <h2>
+              Мои заявки
+            </h2>
+
+            <a
+              href="/application"
+              class="request-card-link"
+            >
+              + Новая
+            </a>
+
+          </div>
+
+
+          <div class="request-list">
+
+            {{#if requests}}
+
+              {{#each requests}}
+
+                <article
+                  class="cabinet-request"
+                  data-request-date="{{Training_date}}"
+                  data-request-status="{{StatusName}}"
+                >
+
+                  <div class="request-main">
+
+                    <strong>
+                      {{WorkoutName}}
+                    </strong>
+
+                    <span>
+                      {{Training_date}}
+                    </span>
+
+                  </div>
+
+
+                  <div class="request-meta">
+
+                    <span class="request-payment">
+                      {{PaymentName}}
+                    </span>
+
+                    <b class="request-status">
+                      {{StatusName}}
+                    </b>
+
+                  </div>
+
+                </article>
+
+              {{/each}}
+
+            {{else}}
+
+              <div class="cabinet-empty">
+                У вас пока нет заявок.
+              </div>
+
+            {{/if}}
+
+          </div>
+
+        </article>
+
+
+        <!-- PROMO -->
+
+        <aside class="cabinet-promo">
+
+          <img
+            src="/assets/listya.png"
+            alt=""
+            class="cabinet-promo-leaf"
+          />
+
+          <div class="cabinet-promo-text">
+            KEEP<br />
+            GOING
+          </div>
+
+          <div class="cabinet-promo-sun"></div>
+
+          <img
+            src="/assets/palma.png"
+            alt=""
+            class="cabinet-promo-palm"
+          />
+
+        </aside>
+
+      </section>
+
+
+      <!-- ACTIONS -->
+
+      <div
+        class="cabinet-actions"
+        id="settings"
+      >
+
+        <a
+          href="/application"
+          class="cabinet-primary-button"
+        >
+          Записаться на тренировку
+        </a>
+
+        <a
+          href="/logout"
+          class="cabinet-secondary-button"
+        >
+          Выйти
+        </a>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      /* =====================================================
+         REQUEST DATA
+      ====================================================== */
+
+      const requestElements =
+        Array.from(
+          document.querySelectorAll(".cabinet-request")
+        );
+
+      const requests =
+        requestElements
+          .map(function (element) {
+
+            const rawDate =
+              element.getAttribute(
+                "data-request-date"
+              );
+
+            const status =
+              element.getAttribute(
+                "data-request-status"
+              );
+
+            const date =
+              new Date(rawDate);
+
+            return {
+              element: element,
+              date: date,
+              status: status
+            };
+
+          })
+          .filter(function (item) {
+
+            return !Number.isNaN(
+              item.date.getTime()
+            );
+
+          });
+
+
+      /* =====================================================
+         STATISTICS
+      ====================================================== */
+
+      const total =
+        requestElements.length;
+
+      const completed =
+        requestElements.filter(
+          function (element) {
+
+            return (
+              element.getAttribute(
+                "data-request-status"
+              ) === "Выполнен"
+            );
+
+          }
+        ).length;
+
+      const active =
+        requestElements.filter(
+          function (element) {
+
+            const status =
+              element.getAttribute(
+                "data-request-status"
+              );
+
+            return (
+              status !== "Выполнен" &&
+              status !== "Отменен"
+            );
+
+          }
+        ).length;
+
+
+      document.getElementById(
+        "statTotal"
+      ).textContent = total;
+
+      document.getElementById(
+        "statActive"
+      ).textContent = active;
+
+      document.getElementById(
+        "statDone"
+      ).textContent = completed;
+
+      document.getElementById(
+        "chartTotal"
+      ).textContent = total;
+
+
+      /* =====================================================
+         STATUS COLORS
+      ====================================================== */
+
+      requestElements.forEach(
+        function (element) {
+
+          const status =
+            element.getAttribute(
+              "data-request-status"
+            );
+
+          const badge =
+            element.querySelector(
+              ".request-status"
+            );
+
+          if (!badge) {
+            return;
+          }
+
+          if (status === "Выполнен") {
+
+            badge.classList.add(
+              "status-done"
+            );
+
+          } else if (status === "Отменен") {
+
+            badge.classList.add(
+              "status-cancel"
+            );
+
+          } else if (status === "В работе") {
+
+            badge.classList.add(
+              "status-progress"
+            );
+
+          } else {
+
+            badge.classList.add(
+              "status-new"
+            );
+
+          }
+
+        }
+      );
+
+
+      /* =====================================================
+         WEEK PROGRESS
+      ====================================================== */
+
+      const now =
+        new Date();
+
+      const startOfWeek =
+        new Date(now);
+
+      const day =
+        startOfWeek.getDay();
+
+      const mondayOffset =
+        day === 0
+          ? 6
+          : day - 1;
+
+      startOfWeek.setDate(
+        startOfWeek.getDate()
+        - mondayOffset
+      );
+
+      startOfWeek.setHours(
+        0, 0, 0, 0
+      );
+
+
+      const endOfWeek =
+        new Date(
+          startOfWeek
+        );
+
+      endOfWeek.setDate(
+        endOfWeek.getDate() + 7
+      );
+
+
+      const doneThisWeek =
+        requests.filter(
+          function (item) {
+
+            return (
+              item.date >= startOfWeek &&
+              item.date < endOfWeek &&
+              item.status === "Выполнен"
+            );
+
+          }
+        ).length;
+
+
+      const weekCount =
+        Math.min(
+          doneThisWeek,
+          5
+        );
+
+      const weekPercent =
+        Math.round(
+          (weekCount / 5) * 100
+        );
+
+
+      document.getElementById(
+        "weekCount"
+      ).textContent =
+        weekCount +
+        " / 5 тренировок";
+
+
+      document.getElementById(
+        "weekFill"
+      ).style.width =
+        weekPercent +
+        "%";
+
+
+      document.getElementById(
+        "weekPercent"
+      ).textContent =
+        weekPercent +
+        "%";
+
+
+      /* =====================================================
+         GRAPH
+      ====================================================== */
+
+      const canvas =
+        document.getElementById(
+          "activityChart"
+        );
+
+      const context =
+        canvas.getContext("2d");
+
+
+      function getMonthName(
+        month
+      ) {
+
+        return [
+          "Янв",
+          "Фев",
+          "Мар",
+          "Апр",
+          "Май",
+          "Июн",
+          "Июл",
+          "Авг",
+          "Сен",
+          "Окт",
+          "Ноя",
+          "Дек"
+        ][month];
+
+      }
+
+
+      function createMonthData() {
+
+        const grouped = {};
+
+        requests.forEach(
+          function (item) {
+
+            const key =
+              item.date.getFullYear()
+              + "-"
+              + item.date.getMonth();
+
+            if (!grouped[key]) {
+              grouped[key] = 0;
+            }
+
+            grouped[key] += 1;
+
+          }
+        );
+
+
+        const sortedKeys =
+          Object.keys(grouped)
+            .sort(
+              function (a, b) {
+
+                const aParts =
+                  a.split("-");
+
+                const bParts =
+                  b.split("-");
+
+                return (
+                  Number(aParts[0])
+                  -
+                  Number(bParts[0])
+                )
+                ||
+                (
+                  Number(aParts[1])
+                  -
+                  Number(bParts[1])
+                );
+
+              }
+            )
+            .slice(-4);
+
+
+        if (!sortedKeys.length) {
+
+          const current =
+            new Date();
+
+          return [
+            {
+              label:
+                getMonthName(
+                  current.getMonth()
+                ),
+              value: 0
+            }
+          ];
+
+        }
+
+
+        return sortedKeys.map(
+          function (key) {
+
+            const parts =
+              key.split("-");
+
+            return {
+              label:
+                getMonthName(
+                  Number(parts[1])
+                ),
+              value:
+                grouped[key]
+            };
+
+          }
+        );
+
+      }
+
+
+      function resizeCanvas() {
+
+        const width =
+          canvas.clientWidth;
+
+        const height =
+          canvas.clientHeight;
+
+        const scale =
+          window.devicePixelRatio || 1;
+
+        canvas.width =
+          width * scale;
+
+        canvas.height =
+          height * scale;
+
+        context.setTransform(
+          scale,
+          0,
+          0,
+          scale,
+          0,
+          0
+        );
+
+
+        context.clearRect(
+          0,
+          0,
+          width,
+          height
+        );
+
+
+        const data =
+          createMonthData();
+
+        const max =
+          Math.max(
+            ...data.map(
+              function (item) {
+                return item.value;
+              }
+            ),
+            1
+          );
+
+
+        const left =
+          10;
+
+        const right =
+          8;
+
+        const top =
+          14;
+
+        const bottom =
+          28;
+
+        const chartWidth =
+          width -
+          left -
+          right;
+
+        const chartHeight =
+          height -
+          top -
+          bottom;
+
+        const slot =
+          chartWidth /
+          data.length;
+
+
+        data.forEach(
+          function (item, index) {
+
+            const barWidth =
+              Math.min(
+                34,
+                slot * 0.46
+              );
+
+            const barHeight =
+              item.value === 0
+                ? 5
+                : (
+                    item.value
+                    / max
+                  ) *
+                  (
+                    chartHeight
+                    - 8
+                  );
+
+            const x =
+              left +
+              index * slot +
+              (
+                slot - barWidth
+              ) / 2;
+
+            const y =
+              top +
+              chartHeight -
+              barHeight;
+
+
+            context.fillStyle =
+              "#FC0F85";
+
+
+            context.beginPath();
+
+            context.roundRect(
+              x,
+              y,
+              barWidth,
+              barHeight,
+              7
+            );
+
+            context.fill();
+
+
+            context.fillStyle =
+              "#616161";
+
+            context.font =
+              "11px Manrope, Arial";
+
+            context.textAlign =
+              "center";
+
+
+            context.fillText(
+              item.label,
+              x +
+                barWidth / 2,
+              height - 8
+            );
+
+          }
+        );
+
+      }
+
+
+      resizeCanvas();
+
+      window.addEventListener(
+        "resize",
+        resizeCanvas
+      );
+
+
+      /* =====================================================
+         CALORIES
+      ====================================================== */
+
+      let calories =
+        1840;
+
+      const goal =
+        2200;
+
+
+      const calorieValue =
+        document.getElementById(
+          "calorieValue"
+        );
+
+      const calorieRing =
+        document.getElementById(
+          "calorieRing"
+        );
+
+
+      function updateCalories() {
+
+        calories =
+          Math.max(
+            0,
+            Math.min(
+              goal,
+              calories
+            )
+          );
+
+
+        const percent =
+          (
+            calories /
+            goal
+          ) * 100;
+
+
+        calorieValue.textContent =
+          calories;
+
+
+        calorieRing.style
+          .setProperty(
+            "--calorie-percent",
+            percent + "%"
+          );
+
+      }
+
+
+      document.getElementById(
+        "calorieMinus"
+      ).addEventListener(
+        "click",
+        function () {
+
+          calories -= 100;
+
+          updateCalories();
+
+        }
+      );
+
+
+      document.getElementById(
+        "caloriePlus"
+      ).addEventListener(
+        "click",
+        function () {
+
+          calories += 100;
+
+          updateCalories();
+
+        }
+      );
+
+
+      updateCalories();
+
+
+      /* =====================================================
+         CALENDAR
+      ====================================================== */
+
+      const calendarGrid =
+        document.getElementById(
+          "calendarGrid"
+        );
+
+      const calendarMonth =
+        document.getElementById(
+          "calendarMonth"
+        );
+
+
+      let calendarDate =
+        new Date();
+
+
+      const months = [
+        "Январь",
+        "Февраль",
+        "Март",
+        "Апрель",
+        "Май",
+        "Июнь",
+        "Июль",
+        "Август",
+        "Сентябрь",
+        "Октябрь",
+        "Ноябрь",
+        "Декабрь"
+      ];
+
+
+      function makeDateKey(
+        date
+      ) {
+
+        return [
+          date.getFullYear(),
+          String(
+            date.getMonth() + 1
+          ).padStart(2, "0"),
+          String(
+            date.getDate()
+          ).padStart(2, "0")
+        ].join("-");
+
+      }
+
+
+      function renderCalendar() {
+
+        const year =
+          calendarDate.getFullYear();
+
+        const month =
+          calendarDate.getMonth();
+
+
+        calendarMonth.textContent =
+          months[month]
+          + " "
+          + year;
+
+
+        calendarGrid.innerHTML =
+          "";
+
+
+        const first =
+          new Date(
+            year,
+            month,
+            1
+          );
+
+
+        let firstDay =
+          first.getDay();
+
+
+        firstDay =
+          firstDay === 0
+            ? 6
+            : firstDay - 1;
+
+
+        const days =
+          new Date(
+            year,
+            month + 1,
+            0
+          ).getDate();
+
+
+        for (
+          let i = 0;
+          i < firstDay;
+          i++
+        ) {
+
+          const empty =
+            document.createElement(
+              "span"
+            );
+
+          empty.className =
+            "calendar-day empty";
+
+          calendarGrid.appendChild(
+            empty
+          );
+
+        }
+
+
+        for (
+          let dayNumber = 1;
+          dayNumber <= days;
+          dayNumber++
+        ) {
+
+          const button =
+            document.createElement(
+              "button"
+            );
+
+          button.type =
+            "button";
+
+          button.className =
+            "calendar-day";
+
+          button.textContent =
+            dayNumber;
+
+
+          const cellDate =
+            new Date(
+              year,
+              month,
+              dayNumber
+            );
+
+
+          const key =
+            makeDateKey(
+              cellDate
+            );
+
+
+          const today =
+            new Date();
+
+
+          if (
+            makeDateKey(today)
+            === key
+          ) {
+
+            button.classList.add(
+              "today"
+            );
+
+          }
+
+
+          const hasTraining =
+            requests.some(
+              function (item) {
+
+                return (
+                  makeDateKey(
+                    item.date
+                  ) === key
+                );
+
+              }
+            );
+
+
+          if (hasTraining) {
+
+            button.classList.add(
+              "training"
+            );
+
+          }
+
+
+          button.addEventListener(
+            "click",
+            function () {
+
+              if (!hasTraining) {
+                return;
+              }
+
+
+              const trainingNames =
+                requestElements
+                  .filter(
+                    function (element) {
+
+                      const date =
+                        new Date(
+                          element.getAttribute(
+                            "data-request-date"
+                          )
+                        );
+
+                      return (
+                        makeDateKey(date)
+                        === key
+                      );
+
+                    }
+                  )
+                  .map(
+                    function (element) {
+
+                      return (
+                        element.querySelector(
+                          ".request-main strong"
+                        )?.textContent
+                        || "Тренировка"
+                      ).trim();
+
+                    }
+                  );
+
+
+              alert(
+                "Тренировка: "
+                +
+                trainingNames.join(
+                  ", "
+                )
+              );
+
+            }
+          );
+
+
+          calendarGrid.appendChild(
+            button
+          );
+
+        }
+
+      }
+
+
+      document.getElementById(
+        "calendarPrev"
+      ).addEventListener(
+        "click",
+        function () {
+
+          calendarDate.setMonth(
+            calendarDate.getMonth() - 1
+          );
+
+          renderCalendar();
+
+        }
+      );
+
+
+      document.getElementById(
+        "calendarNext"
+      ).addEventListener(
+        "click",
+        function () {
+
+          calendarDate.setMonth(
+            calendarDate.getMonth() + 1
+          );
+
+          renderCalendar();
+
+        }
+      );
+
+
+      renderCalendar();
+
+    });
+  </script>

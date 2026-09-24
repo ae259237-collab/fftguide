@@ -1,0 +1,50 @@
+<section class="auth-page">
+  <div class="auth-card auth-card--register">
+
+    <div class="auth-logo">
+      <span class="logo-dark">FIT</span>
+      <span class="logo-accent">GUIDE</span>
+    </div>
+
+    <h1>Регистрация</h1>
+
+    <p class="auth-subtitle">
+      Создайте аккаунт для доступа к тренировкам и отслеживанию прогресса
+    </p>
+
+    <form action="/register" method="POST" class="auth-form">
+
+      <label for="lastName">Фамилия</label>
+      <input type="text" id="lastName" name="lastName" required />
+
+      <label for="firstName">Имя</label>
+      <input type="text" id="firstName" name="firstName" required />
+
+      <label for="middleName">Отчество</label>
+      <input type="text" id="middleName" name="middleName" />
+
+      <label for="phone">Телефон</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" />
+
+      <label for="login">Логин</label>
+      <input type="text" id="login" name="login" required />
+
+      <label for="password">Пароль</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit" class="auth-btn">
+        Зарегистрироваться
+      </button>
+
+    </form>
+
+    <p class="auth-link">
+      Уже есть аккаунт?
+      <a href="/login">Войти</a>
+    </p>
+
+  </div>
+</section>
